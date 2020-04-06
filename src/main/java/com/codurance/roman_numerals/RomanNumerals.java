@@ -8,7 +8,10 @@ public class RomanNumerals {
       if (arabic >= 5){
         roman.append("V");
         arabic -= 5;
-      }else{
+      }else if(arabic >= 4){
+        roman.append("IV");
+        arabic -= 4;
+      } else{
         roman.append("I");
         arabic--;
       }

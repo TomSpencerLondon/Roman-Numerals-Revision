@@ -48,8 +48,11 @@ public class RomanNumeralsShould {
           "1,I",
           "2,II",
           "3,III",
+          "4,IV",
           "5,V",
-          "6,VI"
+          "6,VI",
+          "7,VII",
+          "8,VIII"
   })
   void return_roman_for_arabic(int arabic, String roman) {
     assertEquals(roman, romanNumerals.convert(arabic));
