@@ -5,7 +5,7 @@ public class RomanNumerals {
     StringBuilder roman = new StringBuilder();
 
     while(arabic > 0){
-      if (arabic == 5){
+      if (arabic >= 5){
         roman.append("V");
         arabic -= 5;
       }else{
