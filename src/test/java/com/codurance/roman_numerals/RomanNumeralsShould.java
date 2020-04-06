@@ -46,7 +46,8 @@ public class RomanNumeralsShould {
   @CsvSource({
           "0,''",
           "1,I",
-          "2,II"
+          "2,II",
+          "3,III"
   })
   void return_roman_for_arabic(int arabic, String roman) {
     assertEquals(roman, romanNumerals.convert(arabic));

@@ -2,14 +2,12 @@ package com.codurance.roman_numerals;
 
 public class RomanNumerals {
   public String convert(int arabic) {
-    if (arabic == 0){
-      return "";
+    StringBuilder roman = new StringBuilder();
+
+    for (int i = 0; i < arabic; i++) {
+      roman.append("I");
     }
 
-    if (arabic == 2){
-      return "II";
-    }
-
-    return "I";
+    return roman.toString();
   }
 }
