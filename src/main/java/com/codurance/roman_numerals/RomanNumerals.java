@@ -2,19 +2,30 @@ package com.codurance.roman_numerals;
 
 public class RomanNumerals {
 
-  public String convert(int arabic) {
-    StringBuilder roman = new StringBuilder();
+  private StringBuilder stringBuilder;
 
-    while(arabic > 0){
-      for (RomanNumeral numeral : RomanNumeral.values()){
-        if (arabic >= numeral.arabic){
-          roman.append(numeral.roman);
-          arabic -= numeral.arabic;
-        }
-      }
+  public RomanNumerals() {
+    this.stringBuilder = new StringBuilder();
+  }
+
+  public String convert(int arabic) {
+    if (arabic <= 0){
+      return stringBuilder.toString();
     }
 
-    return roman.toString();
+    RomanNumeral highestValueFor = getHighestValueFor(arabic);
+    stringBuilder.append(highestValueFor.roman);
+    arabic -= highestValueFor.arabic;
+    return convert(arabic);
+  }
+
+  private RomanNumeral getHighestValueFor(int arabic) {
+    for (RomanNumeral numeral : RomanNumeral.values()){
+      if (numeral.arabic <= arabic){
+        return numeral;
+      }
+    }
+    return null;
   }
 
   private enum RomanNumeral {
